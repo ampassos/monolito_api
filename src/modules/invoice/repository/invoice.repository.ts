@@ -1,7 +1,7 @@
 import Id from "../../@shared/domain/value-object/id.value-object";
 import { Address } from "../domain/address.value-object";
 import { Invoice } from "../domain/invoice";
-import { Product } from "../domain/product";
+import { InvoiceItens } from "../domain/invoiceItens";
 import { InvoiceGateway } from "../gateway/invoice.gateway";
 import { InvoiceModel } from "./invoice.model";
 
@@ -22,7 +22,7 @@ function invoiceModelToInvoice(invoiceModel: InvoiceModel): Invoice {
     }),
     items: invoiceModel.items.map(
       (item) =>
-        new Product({
+        new InvoiceItens({
           id: new Id(item.id),
           name: item.name,
           price: item.price,

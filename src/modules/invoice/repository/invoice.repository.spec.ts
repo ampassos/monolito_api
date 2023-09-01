@@ -1,7 +1,7 @@
 import { Sequelize } from "sequelize-typescript";
 import { Address } from "../domain/address.value-object";
 import { Invoice } from "../domain/invoice";
-import { Product } from "../domain/product";
+import { InvoiceItens } from "../domain/invoiceItens";
 import { InvoiceModel } from "./invoice.model";
 import { InvoiceRepository } from "./invoice.repository";
 import Id from "../../@shared/domain/value-object/id.value-object";
@@ -35,15 +35,15 @@ describe("InvoiceRepository test", () => {
       zipCode: "30000",
     });
 
-    const product1 = new Product({
+    const item1 = new InvoiceItens({
       id: new Id("1"),
-      name: "Product 1",
+      name: "Item 1",
       price: 1.99,
     });
 
-    const product2 = new Product({
+    const item2 = new InvoiceItens({
       id: new Id("2"),
-      name: "Product 2",
+      name: "Item 2",
       price: 2.99,
     });
 
@@ -51,7 +51,7 @@ describe("InvoiceRepository test", () => {
       id: new Id("1"),
       name: "Invoice 1",
       document: "Document 1",
-      items: [product1, product2],
+      items: [item1, item2],
       address: address,
     });
 
@@ -81,12 +81,12 @@ describe("InvoiceRepository test", () => {
       items: [
         {
           id: new Id("1"),
-          name: "Product 1",
+          name: "Item 1",
           price: 1.99,
         },
         {
           id: new Id("2"),
-          name: "Product 2",
+          name: "Item 2",
           price: 2.99,
         },
       ],

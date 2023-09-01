@@ -24,12 +24,12 @@ describe("Generate Invoice UseCase unit test", () => {
       items: [
         {
           id: "1",
-          name: "Product 1",
+          name: "Item 1",
           price: 1.99,
         },
         {
           id: "2",
-          name: "Product 2",
+          name: "Item 2",
           price: 2.99,
         },
       ],

@@ -1,7 +1,7 @@
 import Id from "../../../@shared/domain/value-object/id.value-object";
 import { Address } from "../../domain/address.value-object";
 import { Invoice } from "../../domain/invoice";
-import { Product } from "../../domain/product";
+import { InvoiceItens } from "../../domain/invoiceItens";
 import { FindInvoiceUseCase } from "./find-invoice.usecase";
 
 const address = new Address({
@@ -13,13 +13,13 @@ const address = new Address({
   zipCode: "30000",
 });
 
-const product1 = new Product({
+const item1 = new InvoiceItens({
   id: new Id("1"),
   name: "Product 1",
   price: 1.99,
 });
 
-const product2 = new Product({
+const item2 = new InvoiceItens({
   id: new Id("2"),
   name: "Product 2",
   price: 2.99,
@@ -29,7 +29,7 @@ const invoice = new Invoice({
   id: new Id("1"),
   name: "Invoice 1",
   document: "Document 1",
-  items: [product1, product2],
+  items: [item1, item2],
   address: address,
 });
 
@@ -52,8 +52,8 @@ describe("Find Invoice UseCase unit test", () => {
     expect(result.document).toEqual(invoice.document);
     expect(result.address).toEqual(invoice.address);
     expect(result.items).toEqual([
-      { id: "1", name: product1.name, price: product1.price },
-      { id: "2", name: product2.name, price: product2.price },
+      { id: "1", name: item1.name, price: item1.price },
+      { id: "2", name: item2.name, price: item2.price },
     ]);
 
     expect(result.total).toEqual(4.98);
