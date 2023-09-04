@@ -9,7 +9,7 @@ export interface FindClientUseCaseOutputDto {
   name: string
   email: string
   document: string
-  address: Address
+  address: string
   createdAt: Date
   updatedAt: Date
 }

@@ -19,22 +19,7 @@ export class ClientModel extends Model {
   document: string
 
   @Column({ allowNull: false })
-  street: string
-
-  @Column({ allowNull: false })
-  number: string
-
-  @Column({ allowNull: true })
-  complement: string
-
-  @Column({ allowNull: false })
-  city: string
-
-  @Column({ allowNull: false })
-  state: string
-
-  @Column({ allowNull: false })
-  zipcode: string
+  address: string
 
   @Column({ allowNull: false })
   createdAt: Date

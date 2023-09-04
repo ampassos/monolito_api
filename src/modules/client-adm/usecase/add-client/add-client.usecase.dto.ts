@@ -6,7 +6,7 @@ export interface AddClientInputDto {
   name: string
   email: string
   document: string
-  address: Address
+  address: string
 }
 
 export interface AddClientOutputDto {
@@ -14,7 +14,7 @@ export interface AddClientOutputDto {
   name: string
   email: string
   document: string
-  address: Address
+  address: string
   createdAt: Date
   updatedAt: Date
 }
